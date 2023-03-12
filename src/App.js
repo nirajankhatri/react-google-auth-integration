@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { GoogleLogin } from "@react-oauth/google";
+import Navbar from "./components/nav/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Login from "./components/login/Login";
 
 function App() {
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+
+  const errorMessage = (error) => {
+    console.log(error);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <h2>React Google Login</h2>
+      <Routes>
+        <Route path="login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
