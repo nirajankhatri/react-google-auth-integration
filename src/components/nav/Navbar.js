@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/images/menu.svg";
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
+import LoginBtn from "../loginbtn/LoginBtn";
 
 function Navbar() {
   return (
@@ -24,7 +25,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="nav-right btns">
-        <button className="btn btn-login"><NavLink to="login">Login</NavLink></button>
+        <LoginBtn />
       </div>
     </div>
   );
